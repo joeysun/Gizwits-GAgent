@@ -249,6 +249,9 @@ static void Lan_handlePasscode( pgcontext pgc, ppacket src, int clientIndex)
     passcodeLen = htons(strlen( pgc->gc.wifipasscode ));
     *(uint16 *)(pbuf + 8) =  passcodeLen;
 
+    /* add by JoeySun */
+    passcodeLen = strlen( pgc->gc.wifipasscode );
+    
     /* passcode */
     for(i=0;i < passcodeLen;i++)
     {
